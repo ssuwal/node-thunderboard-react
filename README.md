@@ -759,8 +759,7 @@ device.setLedStatus(status, (error) => {
 
 #### <a name="getSwitchStatus-method"> getSwitchStatus(*callback*)</a>
 
-<div style="color: #aaaaaa;">
-<span style="color: red">This method does NOT work for now. It's not known exactly why.</span>
+<p style="color:red;">This method does NOT work for now. It's not known exactly why.</p>
 
 This method reads the Button Switch status from the device. When the process was completed, the `callback` will be called. The two arguments will be passed to the `callback`: the `Error` object and `Response` object. The `Response` object is a hash object having the properties as follows:
 
@@ -778,12 +777,10 @@ device.getSwitchStatus((error, res) => {
 ```
 
 This method reads the characteristic UUID `0x2a56` of the Automation IO Service (UUID: `0x1815`).
-</div>
 
 #### <a name="startMonitorSwitchStatus-method"> startMonitorSwitchStatus(*[callback]*)</a>
 
-<div style="color: #aaaaaa;">
-<span style="color: red">This method does NOT work for now. It's not known exactly why.</span>
+<p style="color:red;">This method does NOT work for now. It's not known exactly why.</p>
 
 This method starts to monitor the Button Switch status notifications from the device. When this method finished the process, the `callback` will be called. A `Error` object will be passed to the `callback` as the 1st argument. If this method prepared to start monitoring successfully, the `Error` object will be `null`. The `callback` is optional.
 
@@ -816,15 +813,12 @@ setTimeout(() => {
 }, 10000);
 ```
 This method requests the notifications to the characteristic UUID `0x2a56` of the Automation IO Service (UUID: `0x1815`).
-</div>
 
 #### <a name="stopMonitorSwitchStatus-method"> stopMonitorSwitchStatus(*[callback]*)</a>
 
-<div style="color: #aaaaaa;">
 <span style="color: red">This method does NOT work for now. It's not known exactly why.</span>
 
 This method stops to monitor the Orientation notifications from the device. When this method finished the process, the `callback` will be called. A `Error` object will be passed to the `callback` as the 1st argument. If this method stops to monitor successfully, the `Error` object will be `null`. The `callback` is optional.
-</div>
 
 ### <a name="ThunderboardReactDevice-events"> Events</a>
 
@@ -883,12 +877,9 @@ The `orientation` event is fired on the [`ThunderboardReactDevice`](#Thunderboar
 
 #### <a name="switch-event"> `switch` event</a>
 
-<div style="color: #aaaaaa;">
-<span style="color: red">This event does NOT work for now. It's not known exactly why.</span>
+<p style="color:red;">This event does NOT work for now. It's not known exactly why.</p>
 
 The `switch` event is fired on the [`ThunderboardReactDevice`](#ThunderboardReact-object) object whenever a the Button Switch notification is received from the device after the [`startMonitorSwitchStatus()` method](#startMonitorSwitchStatus-method) was called. This event can be listened until the [`stopMonitorSwitchStatus()` method](#stopMonitorSwitchStatus-method) was called. See the section "[`startMonitorSwitchStatus()` method](#startMonitorSwitchStatus-method)" for details.
-
-</div>
 
 ---------------------------------------
 ## <a name="License"> License</a>
