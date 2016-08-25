@@ -759,7 +759,7 @@ device.setLedStatus(status, (error) => {
 
 #### <a name="getSwitchStatus-method"> getSwitchStatus(*callback*)</a>
 
-<p style="color:red;">This method does NOT work for now. It's not known exactly why.</p>
+<font color="red">This method does NOT work for now. It's not known exactly why.</font>
 
 This method reads the Button Switch status from the device. When the process was completed, the `callback` will be called. The two arguments will be passed to the `callback`: the `Error` object and `Response` object. The `Response` object is a hash object having the properties as follows:
 
@@ -780,7 +780,7 @@ This method reads the characteristic UUID `0x2a56` of the Automation IO Service 
 
 #### <a name="startMonitorSwitchStatus-method"> startMonitorSwitchStatus(*[callback]*)</a>
 
-<p style="color:red;">This method does NOT work for now. It's not known exactly why.</p>
+<font color="red">This method does NOT work for now. It's not known exactly why.</font>
 
 This method starts to monitor the Button Switch status notifications from the device. When this method finished the process, the `callback` will be called. A `Error` object will be passed to the `callback` as the 1st argument. If this method prepared to start monitoring successfully, the `Error` object will be `null`. The `callback` is optional.
 
@@ -816,7 +816,7 @@ This method requests the notifications to the characteristic UUID `0x2a56` of th
 
 #### <a name="stopMonitorSwitchStatus-method"> stopMonitorSwitchStatus(*[callback]*)</a>
 
-<span style="color: red">This method does NOT work for now. It's not known exactly why.</span>
+<font color="red">This method does NOT work for now. It's not known exactly why.</font>
 
 This method stops to monitor the Orientation notifications from the device. When this method finished the process, the `callback` will be called. A `Error` object will be passed to the `callback` as the 1st argument. If this method stops to monitor successfully, the `Error` object will be `null`. The `callback` is optional.
 
