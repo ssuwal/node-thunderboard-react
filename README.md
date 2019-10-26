@@ -33,6 +33,8 @@ The early versions of this module depended on [noble](https://github.com/sandeep
 
 ## Installation
 ```
+$ cd ~
+$ npm install @abandonware/noble
 $ npm install node-thunderboard-react
 ```
 ---------------------------------------
