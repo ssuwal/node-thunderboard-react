@@ -21,8 +21,15 @@ The node-thunderboard-react provides you with the APIs as follows:
 	* Automation IO Service (partially)
 
 ## Dependencies
-- [Node.js](https://nodejs.org/en/) 4.4 +
-- [noble](https://www.npmjs.com/package/noble)
+
+* [Node.js](https://nodejs.org/en/) 4.4 +
+* [@abandonware/noble](https://github.com/abandonware/noble)
+
+See the document of the [@abandonware/noble](https://github.com/abandonware/noble) for details on installing the [@abandonware/noble](https://github.com/abandonware/noble).
+
+Note that the noble has to be run as root on most of Linux environments. See the the document of the [@abandonware/noble](https://github.com/abandonware/noble) for details.
+
+The early versions of this module depended on [noble](https://github.com/sandeepmistry/noble) for BLE handling. But the [noble](https://github.com/sandeepmistry/noble) seems not to support Node v10 or later versions. Now, this module is employing [@abandonware/noble](https://github.com/abandonware/noble), which was forked from [noble](https://github.com/sandeepmistry/noble). For the purouse of the backward compatibility, this module works with [noble](https://github.com/sandeepmistry/noble) on Node v8 or earlier versions.
 
 ## Installation
 ```
@@ -77,6 +84,8 @@ $ npm install node-thunderboard-react
 		* [`acceleration` event](#acceleration-event)
 		* [`orientation` event](#orientation-event)
 		* [`switch` event](#switch-event)
+* [Release Note](#Release-Note)
+* [References](#References)
 * [License](#License)
 
 ---------------------------------------
@@ -882,26 +891,41 @@ The `orientation` event is fired on the [`ThunderboardReactDevice`](#Thunderboar
 The `switch` event is fired on the [`ThunderboardReactDevice`](#ThunderboardReact-object) object whenever a the Button Switch notification is received from the device after the [`startMonitorSwitchStatus()` method](#startMonitorSwitchStatus-method) was called. This event can be listened until the [`stopMonitorSwitchStatus()` method](#stopMonitorSwitchStatus-method) was called. See the section "[`startMonitorSwitchStatus()` method](#startMonitorSwitchStatus-method)" for details.
 
 ---------------------------------------
+## <a id="Release-Note">Release Note</a>
+
+* v0.1.0 (2019-10-26)
+  * Supported Node v6 or later versions thanks to [@abandonware/noble](https://github.com/abandonware/noble)
+  * Updated some deprecated codes related to the [`Buffer`](https://nodejs.org/api/buffer.html). Now, Node v10 or later versions does not complain with this module.
+* v0.0.1 (2016-08-26)
+  * First public release
+
+---------------------------------------
+## <a id="References">References</a>
+
+* [Thunderboard React Kit - Sensor to Cloud Connectivity - Silicon Labs](https://www.silabs.com/products/development-tools/thunderboard/thunderboard-react-kit-sensor-cloud-connectivity)
+* [UG164: ThunderboardTM React (RD-0057-0201) User's Guide](https://www.silabs.com/documents/public/user-guides/ug164-thunderboard-react.pdf)
+
+---------------------------------------
 ## <a name="License"> License</a>
 
 The MIT License (MIT)
 
-Copyright 2016 Futomi Hatano
+Copyright (c) 2017-2019 Futomi Hatano
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to
-deal in the Software without restriction, including without limitation the
-rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
-sell copies of the Software, and to permit persons to whom the Software is
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
-IN THE SOFTWARE.
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
