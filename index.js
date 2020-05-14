@@ -1,5 +1,19 @@
 var ThunderboardReact = require('./lib/node-thunderboard-react');
 var thunder = new ThunderboardReact();
+const mqtt = require('mqtt');
+const client = mqtt.connect('mqtt://localhost:1883')
+let count = 0;
+client.on('connect', _ => {
+    console.log(`Connected to MQTT Mosquitto`)
+    // const publish = setInterval(() => {
+    //     ++count;
+    //     client.publish('testchannel/test', JSON.stringify({name: 'santosh', lastname: 'suwal', count}))
+    //     // if (count >= 10) {
+    //     //     clearInterval(publish);
+    //     //     process.exit(0);
+    //     // }
+    // }, 5000);
+})
 
 // Initialize the ThunderboardReact object
 thunder.init((error) => {
@@ -21,7 +35,7 @@ thunder.init((error) => {
       getEnvironmentalSensing(device);
       setInterval(() => {
         getEnvironmentalSensing(device);
-      }, 60000)
+      }, 10000)
     });
   });
 });
@@ -30,6 +44,11 @@ thunder.init((error) => {
 function getEnvironmentalSensing(device) {
   device.getEnvironmentalSensing((error, res) => {
     // Show the data
+    client.publish('sensor/santosh', JSON.stringify({
+        ...res,
+        latitude: '40.7468699',
+        longitude: '-73.9026455'
+    }))
     console.log(`- Date: ${new Date()}`)
     console.log('- Sensored data:');
     console.log('  - Humidity    : ' + res.humidity + ' %');
